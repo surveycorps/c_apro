@@ -4,6 +4,7 @@ import time
 
 start = 0
 stop = 0
+CONST_TOINCH = (13397.2441)/2 
 
 # Set up hardware pins
 TRIG_PIN = "P9_13"
@@ -38,6 +39,7 @@ while True:
 
         if (skip_section):
               continue
+
         elapsed = stop - start
-        distance = (elapsed*13397.2441)/2 
+        distance = (elapsed*CONST_TOINCH)
         print("Distance (in): %f" % distance)
