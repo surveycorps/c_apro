@@ -1,0 +1,3 @@
+[submodule "Nodes/imuraw_gy88"]
+	path = Nodes/imuraw_gy88
+	url = https://github.com/surveycorps/imuraw_gy88.git
