@@ -12,4 +12,4 @@ SRCREV = "e3b52b1ac2b2c4a8e1c39e30a8be3e2201d13b68"
 
 S = "${WORKDIR}/imu_filter"
 
-inherit catkin cmake
+inherit catkin
