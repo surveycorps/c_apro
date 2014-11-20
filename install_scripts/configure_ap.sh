@@ -1,8 +1,8 @@
+#!/bin/bash
 # Automatic script to make the Beaglebone Black an Access Point
 # Intended for the latest debian BBB image
 # 3.8.13 Kernel Version
 
-#!/bin/bash
 cd ~
 mkdir wireless_temp
 apt-get install -y unzip
@@ -15,11 +15,11 @@ echo "Step 1. Attach rtl8192cu driver to the kernel"
 
 echo "Installing kernel headers"
 wget http://rcn-ee.net/deb/wheezy-armhf/v3.8.13-bone50/linux-headers-3.8.13-bone50_1.0wheezy_armhf.deb
-dpkg -i linux-headers-3.8.13-bone26_1.0raring_armhf.deb
+dpkg -i linux-headers-3.8.13-bone50_1.0wheezy_armhf.deb
 apt-get install -y dkms
 ln -s /usr/src/linux-headers-3.8.13-bone50/arch/arm /usr/src/linux-headers-3.8.13-bone50/arch/armv7l
 # Fix Timex.h error as specified in link (1)
-TIMEX_FIX="#include </usr/src/linux-headers-3.8.13-bone26/arch/arm/include/asm/timex.h>"
+TIMEX_FIX="#include </usr/src/linux-headers-3.8.13-bone50/arch/arm/include/asm/timex.h>"
 sed -i '18s/.*/'$TIMEX_FIX'/' /usr/src/linux-headers-3.8.13-bone50/arch/armv7l/include/asm/timex.h
 
 echo "Building rtl8192cu driver"
