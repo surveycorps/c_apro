@@ -73,7 +73,7 @@ class IMU :
         return self._twos_comp((b_high << 8 | b_low), 16)
 
     # Get bias as the simple average of values in a non-inertial frame 
-    def get_bias(self, sensor, counts=100, duration=None):
+    def _get_bias(self, sensor, counts=100, duration=None):
 
         bias = [0,0,0]
 
@@ -93,10 +93,10 @@ class IMU :
 
 
     def get_accel_bias(self, counts=100, duration=None):
-        self.accel_bias = get_bias(self, self.accel, counts, duration) 
+        self.accel_bias = _get_bias(self, self.accel, counts, duration) 
 
     def get_gyro_bias(self, counts=100, duration=None):
-        self.gyro_bias = get_bias(self, self.gyro, counts, duration) 
+        self.gyro_bias = _get_bias(self, self.gyro, counts, duration) 
 
     def accel(self):
         a = [self.accel_x(), self.accel_y(), self.accel_z()]
