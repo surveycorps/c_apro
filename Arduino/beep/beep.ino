@@ -1,13 +1,23 @@
+// On-Board LED for status indications
 int led = 15; // E1
+
+// 3 soft-PWM pins for motor
+// Use analogWrite() with arg 0-255
 int M1 = 18; // D0
 int M2 = 19; // D1
 int M3 = 14; // E0
+
+// 3 Analog pins for direction of motors
+// maybe you can use digitalWrite???
 int dir1 = A0; // A1
 int dir2 = A1; // A2
 int dir3 = A2; // A3
-//int M1L = C0; // C0
+
+// 6 Inputs for encoders
+// use attachInterrupt
+int M1L = 2; // C0
 int M1R = A3; // A4
-//int M2L = C1; // C1
+int M2L = 3; // C1
 int M2R = A4; // A5
 int M3L = 7; // B2
 int M3R = A5; // A6
