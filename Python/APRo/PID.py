@@ -1,5 +1,4 @@
 class PID:
-    setpoint 
     dt = -1
     def __init__(self, setpoint, p=2, i=0, d=1):
         self.setpoint = setpoint
